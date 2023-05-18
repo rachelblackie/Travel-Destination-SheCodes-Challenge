@@ -59,8 +59,11 @@
     #hallasan,
     #udo,
     #loveland,
-    #jeju-city {
+    #city {
       height: 100vh;
+    }
+    .social-links {
+      font-size: 30px;
     }
     @media (max-width: 450px) {
       h1 {
@@ -69,8 +72,12 @@
       h3 {
         font-size: 60px;
       }
-      .header-input {
+      input {
         font-size: 50px;
+      }
+      .text-on-image {
+        left: 13%;
+        width: 74%;
       }
     }
   </style>
@@ -83,29 +90,43 @@
     />
   </div>
   <div class="text-center position-absolute text-on-image">
-    <h1 class="header">Visit Jeju Island</h1>
-    <h3 class="header-question">What would you like to do?</h3>
+    <h1>Visit Jeju Island</h1>
+    <h3>What would you like to do?</h3>
     <form>
       <input
         type="text"
         placeholder="Try: hiking, restaurants..."
-        class="m-2 header-input"
+        class="m-2"
+        id="answer"
       />
       <br />
-      <input type="button" value="Go!" class="header-input" />
+      <input type="submit" value="Go!" id="go-button" class="btn btn-dark" />
     </form>
     <i class="fa-solid fa-chevron-down"></i>
   </div>
   <div class="m-5 row" id="hallasan">
-    <div class="col-lg">
+    <div class="col-lg my-auto">
       <h1>Hallasan</h1>
-      <p>Hallasan is the highest mountain in Korea! It's a volcano!</p>
-      <a href="https://visithalla.jeju.go.kr/main/main.do?language=en_US"
-        >Visit Hallasan</a
+      <p>
+        Hallasan is a shield volcano on Jeju Island in South Korea and it is the
+        highest point of South Korea. The area around the mountain is a
+        designated national park, the Hallasan National Park. Hallasan is
+        commonly considered to be one of the three main mountains of South
+        Korea, along with Jirisan and Seoraksan.
+      </p>
+      <ul>
+        <li>Elevation: 1,947 m</li>
+        <li>Last eruption: 1007 CE</li>
+      </ul>
+      <a
+        href="https://visithalla.jeju.go.kr/main/main.do?language=en_US"
+        class="btn btn-dark"
+        target="_blank"
+        >Plan Your Visit</a
       >
     </div>
-    <div class="col-lg">
-      <div id="carouselExample" class="carousel slide">
+    <div class="col-lg my-auto">
+      <div id="hallaCarousel" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item">
             <img
@@ -132,7 +153,7 @@
         <button
           class="carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExample"
+          data-bs-target="#hallaCarousel"
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -141,7 +162,7 @@
         <button
           class="carousel-control-next"
           type="button"
-          data-bs-target="#carouselExample"
+          data-bs-target="#hallaCarousel"
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -150,27 +171,244 @@
       </div>
     </div>
   </div>
-  <div class="m-5" id="udo">
-    <h1>Udo Island</h1>
-    <p>
-      Rent a bike and drive around Udo! Eat ice cream, go to the beach, etc.
-    </p>
+  <div class="row m-5" id="udo">
+    <div class="col-lg my-auto">
+      <h1>Udo Island</h1>
+      <p>
+        Udo, literally "Cow Island" in Hanja, has this name because of its
+        resemblance of a cow lying down. The whole of Udo is a lava plateau and
+        a fertile flatland where major agricultural products such as sweet
+        potatoes, garlic, and peanuts are produced. The island is located on the
+        northeast of Seongsan-ri, 3.5 kilometres (2.2 miles) off the coast of
+        Jeju Island.
+      </p>
+      <ul>
+        Things to do:
+        <li>Rent a bicycle, ATV, or scooter to drive around the island</li>
+        <li>
+          <a
+            href="https://m.visitjeju.net/en/detail/view?contentsid=CONT_000000000500474"
+            target="_blank"
+            >Visit Sanho Beach</a
+          >
+        </li>
+        <li>
+          Try peanut ice cream, a local specialty, at
+          <a
+            href="https://www.tripadvisor.com/Restaurant_Review-g297885-d9158743-Reviews-Jimmy_s-Jeju_Jeju_Island.html"
+            target="_blank"
+            >Jimmy's</a
+          >
+          or
+          <a
+            href="https://www.trip.com/travel-guide/foods/jeju-1446512-restaurant/u-do-prince-story-18687999"
+            target="_blank"
+            >Udo Prince Story</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg my-auto">
+      <div id="udoCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/113/original/udo1.jpg?1684172603"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item active">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/114/original/udo2.jpg?1684172610"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/115/original/udo3.jpg?1684172617"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#udoCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#udoCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <div class="m-5" id="loveland">
-    <h1>LoveLand</h1>
-    <p>Loveland is cool and fun</p>
+  <div class="m-5 row" id="loveland">
+    <div class="col-lg my-auto">
+      <h1>LoveLand</h1>
+      <p>
+        Loveland is an outdoor sculpture park which opened in 2004. The park is
+        focused on a theme of sex; running sex education films, and featuring
+        140 sculptures representing humans in various sexual positions. The
+        park's website describes the location as "a place where love oriented
+        art and eroticism meet".
+      </p>
+      <a
+        href="http://www.jejuloveland.com/"
+        target="_blank"
+        class="btn btn-dark"
+        >Plan Your Visit</a
+      >
+    </div>
+    <div class="col-lg my-auto">
+      <div id="lovelandCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/117/original/loveland1.jpg?1684173726"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item active">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/118/original/loveland2.jpg?1684173734"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/119/original/loveland3.jpg?1684173740"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#lovelandCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#lovelandCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
-  <div class="m-5" id="jeju-city">
-    <h1>Jeju City</h1>
-    <p>Have a night out on the town in Jeju City</p>
+  <div class="m-5 row" id="city">
+    <div class="col-lg my-auto">
+      <h1>Jeju City</h1>
+      <p>
+        Jeju City, on Jeju Island, is the capital of South Korea's Jeju
+        Province. In the city, Sinsan Park has displays of marine animals at
+        Jeju Folklore and Natural History Museum. Jejuhyanggyo Confucian School
+        houses ancestral tablets and offers calligraphy classes. On the coast,
+        Yongduam Haesu Spa Land has seawater saunas. Nearby, divers at the
+        dragon-shaped Yongduam Rock collect seafood using traditional methods.
+      </p>
+      <ul>
+        Things to do:
+        <li>
+          <a
+            href="https://www.ivisitkorea.com/17-best-restaurants-loved-by-locals-in-jeju/"
+            target="_blank"
+            >Try the local food at some of Jeju's best restaurants</a
+          >
+        </li>
+        <li>
+          <a href="https://jeju.museum.go.kr/html/en/" target="_blank"
+            >Visit the Jeju National Museum</a
+          >
+        </li>
+        <li>
+          <a href="http://www.spiritedgarden.com/" target="_blank"
+            >Visit the World's Largest Botanical Garden</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.koreatravelpost.com/best-bars-jeju/"
+            target="_blank"
+            >Enjoy a night out in one of Jeju City's best bars</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg my-auto">
+      <div id="cityCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/138/original/jejucity1.jpg?1684177332"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item active">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/139/original/jejucity2.jpg?1684177340"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/142/original/jejucity3.jpg?1684177577"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#cityCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#cityCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
   <footer class="text-center m-3">
     <p>
       Coded by
       <a href="http://www.rblackie.com" target="_blank">Rachel Blackie</a>
     </p>
-    <p>
+    <p class="social-links">
       <span class="mx-1"
         ><a href="https://github.com/rachelblackie" target="_blank"
           ><i class="fa-brands fa-square-github"></i></a></span
@@ -183,10 +421,73 @@
     </p>
   </footer>
   <script>
-    const input = document.querySelector("input");
-    input.addEventListener("input", answerQuestion);
+    let input = document.querySelector("form");
+    input.addEventListener("submit", answerQuestion);
+
     function answerQuestion() {
-      alert(target.value);
+      event.preventDefault();
+      var answer = document.getElementById("answer").value;
+      answer = answer.toLowerCase();
+      answer = answer.trim();
+      const hallasanKeyword = [
+        "hiking",
+        "hike",
+        "outside",
+        "outdoor",
+        "mountain",
+        "climb",
+        "volcano",
+      ];
+      const udoKeyword = [
+        "cycling",
+        "cycle",
+        "bike",
+        "biking",
+        "beach",
+        "ice cream",
+        "ocean",
+        "relax",
+      ];
+      const lovelandKeyword = [
+        "art",
+        "fun",
+        "silly",
+        "strange",
+        "different",
+        "park",
+        "theme",
+        "sculpture",
+      ];
+      const cityKeyword = [
+        "nightlife",
+        "restaurant",
+        "eat",
+        "food",
+        "pork",
+        "seafood",
+        "local",
+        "karaoke",
+        "noraebang",
+        "sing",
+      ];
+
+      if (hallasanKeyword.indexOf(answer) !== -1) {
+        var hallasan = document.getElementById("hallasan").offsetTop;
+        window.scrollTo({ top: hallasan, behavior: "smooth" });
+      } else if (udoKeyword.indexOf(answer) !== -1) {
+        var udo = document.getElementById("udo").offsetTop;
+        window.scrollTo({ top: udo, behavior: "smooth" });
+      } else if (lovelandKeyword.indexOf(answer) !== -1) {
+        var loveland = document.getElementById("loveland").offsetTop;
+        window.scrollTo({ top: loveland, behavior: "smooth" });
+      } else if (cityKeyword.indexOf(answer) !== -1) {
+        var city = document.getElementById("city").offsetTop;
+        window.scrollTo({ top: city, behavior: "smooth" });
+      } else {
+        alert(
+          "Sorry, what you typed in didn't match any of the keywords on our list! Try something else, or scroll through this page - you might find something you'd like!"
+        );
+      }
     }
   </script>
 </body>
